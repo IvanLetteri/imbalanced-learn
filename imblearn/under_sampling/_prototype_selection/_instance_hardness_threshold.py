@@ -177,7 +177,7 @@ class InstanceHardnessThreshold(BaseUnderSampler):
 
         self.sample_indices_ = idx_under
 
-        return _safe_indexing(X, idx_under), _safe_indexing(y, idx_under)
+        return _safe_indexing(X, idx_under), _safe_indexing(y, idx_under), probabilities
 
     def _more_tags(self):
         return {"sample_indices": True}
