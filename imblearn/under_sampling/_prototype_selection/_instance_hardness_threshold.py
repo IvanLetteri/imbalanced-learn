@@ -93,7 +93,8 @@ class InstanceHardnessThreshold(BaseUnderSampler):
     >>> print('Original dataset shape %s' % Counter(y))
     Original dataset shape Counter({{1: 900, 0: 100}})
     >>> iht = InstanceHardnessThreshold(random_state=42)
-    >>> X_res, y_res = iht.fit_resample(X, y)
+    >>> X_res, y_res, probs = iht.fit_resample(X, y)
+    >>> print(np.round(probs,3))
     >>> print('Resampled dataset shape %s' % Counter(y_res))  # doctest: +ELLIPSIS
     Resampled dataset shape Counter({{1: 5..., 0: 100}})
     """
